@@ -1,0 +1,65 @@
+Global setup:(chỉ cần setup 1 lần)
+git config --global user.name "Nguyen"
+git config --global user.email "..."
+git config user.username "John Doe" (ten rieng cho 1 repository, phải vào cd vào local repository)
+
++Kiểm tra sau khi khai báo name, email
+git config --global user.name (kiem tra ten)
+
+Manager/Leader (người khởi tạo repository):
+
+Đẩy dự án mới lên github
+
+Tạo new repository (kho lưu trữ) trên github
+Khởi tạo repository local
+git init
+kết nối local repository với remote repository
+git remote add origin [đường dẫn trên github]
+Thêm file vào local repo
+git add file (file: tên file)
+Xác nhận và ghi chú thích
+git commit -m "note"
+Đẩy file lên server (remote repo trên github)
+git push -u origin master
+(lệnh này chỉ dùng khi đẩy lên lần đầu tiên, những lên sau chỉ ghi: git push)
+Nếu push lên bị xung đột thì phải nạp những thay đổi từ github về local hay có thể sử dụng lệnh push là: 
+git push origin master -f (or git push origin master --force)
+
+DEV/thành viên của dự án (Người tham gia vào repository):
+Copy remote repo về local (chỉ chạy 1 lần duy nhất khi chưa có repository)
+git clone "đường dẫn trên github"
+Cập nhật code mới về local
+git pull
+Thêm file vào local repo
+git add file (file: tên file)
+Những cách khác để thêm file:
+git add file1 file2 file3 (liệt kê từng file)
+git add . (add tất cả)
+git add -A (chỉ thêm những file bị thay đổi)
+Xác nhận và ghi chú thích
+git commit -m "note"
+Đẩy file lên server (remote repo trên github)
+git push
+Thêm user vào dự án
+Vào web github
+Setting => Collaborators
+
+Xung đột code
+Nếu không pull code về mà edit và push lên sẽ có conflict ( xung đột code)
+=> git pull về và edit
+=> git add
+=> git push lại
+
+Tạo nhánh (branch)
+
+Tạo nhánh mới
+git branch tennhanh (tạo mới nhánh)
+git checkout -b tennhanh (chuyển và tao mới nhánh)
+Chuyển nhánh
+git checkout tenbranch
+Kiểm tra branch hien tai
+git branch
+Xóa nhánh
+git branch -D tennhanh
+Các lệnh khác:
+git status (kiểm tra có file nào mới chưa git add ko)
